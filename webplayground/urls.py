@@ -18,6 +18,7 @@ from django import urls
 from django.contrib import admin
 from django.urls import path, include
 from pages.urls import pages_patterns
+from profiles.urls import profile_patterns
 from django.conf import settings
 
 urlpatterns = [
@@ -27,7 +28,8 @@ urlpatterns = [
     path('pages/', include(pages_patterns)),
     # PATH DE AUTH
     path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('registration.urls')), 
+    path('accounts/', include('registration.urls')),
+    path('profiles/', include(profile_patterns)),
 ]
 
 
