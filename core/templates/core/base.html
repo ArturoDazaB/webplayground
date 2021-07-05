@@ -30,11 +30,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'pages:pages' %}">Página</a>
               </li>
-              {% if request.user.is_staff %}
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profiles:list' %}">Perfiles</a>
-                  </li>  
-              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'profiles:list' %}">Perfiles</a>
+              </li>
             </ul>
             <ul class="navbar-nav">
               {% if not request.user.is_authenticated %}
@@ -47,6 +45,10 @@
                 </a>
               </li>
               {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'messenger:list' %}">Mensajes
+                </a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'profile' %}">Perfil
                 </a>
